@@ -3,6 +3,8 @@ package com.workflow.demo.entity.system;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -14,100 +16,21 @@ import java.io.Serializable;
  * @since 2019-09-01
  */
 @TableName("sys_role")
+@Data
 public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("ROLE_ID")
-	private String roleId;
-	@TableField("ROLE_NAME")
-	private String roleName;
-	@TableField("RIGHTS")
-	private String rights;
-	@TableField("PARENT_ID")
-	private String parentId;
-	@TableField("ADD_QX")
-	private String addQx;
-	@TableField("DEL_QX")
-	private String delQx;
-	@TableField("EDIT_QX")
-	private String editQx;
-	@TableField("CHA_QX")
-	private String chaQx;
-	@TableField("RNUMBER")
-	private String rnumber;
+	private String ROLE_ID;		//ID
+	private String ROLE_NAME;	//名称
+	private String RIGHTS;		//权限(存放的除权后的菜单ID)控制菜单显示
+	private String PARENT_ID;	//上级ID
+	private String ADD_QX;		//新增权限(存放的除权后的菜单ID)有新增权限的菜单ID
+	private String DEL_QX;		//删除权限(存放的除权后的菜单ID)有删除权限的菜单ID
+	private String EDIT_QX;		//修改权限(存放的除权后的菜单ID)有修改权限的菜单ID
+	private String CHA_QX;		//查看权限(存放的除权后的菜单ID)有查看权限的菜单ID
+	private String RNUMBER;		//编号(在处理类中新增的时候自动生成)
 
 
-	public String getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
-
-	public String getRights() {
-		return rights;
-	}
-
-	public void setRights(String rights) {
-		this.rights = rights;
-	}
-
-	public String getParentId() {
-		return parentId;
-	}
-
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-	}
-
-	public String getAddQx() {
-		return addQx;
-	}
-
-	public void setAddQx(String addQx) {
-		this.addQx = addQx;
-	}
-
-	public String getDelQx() {
-		return delQx;
-	}
-
-	public void setDelQx(String delQx) {
-		this.delQx = delQx;
-	}
-
-	public String getEditQx() {
-		return editQx;
-	}
-
-	public void setEditQx(String editQx) {
-		this.editQx = editQx;
-	}
-
-	public String getChaQx() {
-		return chaQx;
-	}
-
-	public void setChaQx(String chaQx) {
-		this.chaQx = chaQx;
-	}
-
-	public String getRnumber() {
-		return rnumber;
-	}
-
-	public void setRnumber(String rnumber) {
-		this.rnumber = rnumber;
-	}
 
 }
