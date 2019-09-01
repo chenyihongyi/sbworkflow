@@ -82,6 +82,25 @@ public class UserController extends BaseController {
 
     }
 
+    /**
+     * 新增用户页面
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value="/goAddUser")
+    @RequiresPermissions("user:add")
+    @ResponseBody
+    public Object goAddUser()throws Exception{
+        Map<String,Object> map = new HashMap<String,Object>();
+        String errInfo = "success";
+        PageData pd = new PageData();
+        pd.put("ROLE_ID", "1");
+        List<Role> roleList = roleService.listAllRolesByPId(pd);		//列出所有系统用户角色
+        map.put("roleList", roleList);
+        map.put("result", errInfo);
+        return map;
+    }
+
 
 
 
