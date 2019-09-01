@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.demo.dao.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.system.User">
+		<id column="USER_ID" property="userId" />
+		<result column="USERNAME" property="username" />
+		<result column="PASSWORD" property="password" />
+		<result column="NAME" property="name" />
+		<result column="ROLE_ID" property="roleId" />
+		<result column="LAST_LOGIN" property="lastLogin" />
+		<result column="IP" property="ip" />
+		<result column="STATUS" property="status" />
+		<result column="BZ" property="bz" />
+		<result column="SKIN" property="skin" />
+		<result column="EMAIL" property="email" />
+		<result column="NUMBER" property="number" />
+		<result column="PHONE" property="phone" />
+		<result column="ROLE_IDS" property="roleIds" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        USER_ID AS userId, USERNAME AS username, PASSWORD AS password, NAME AS name, ROLE_ID AS roleId, LAST_LOGIN AS lastLogin, IP AS ip, STATUS AS status, BZ AS bz, SKIN AS skin, EMAIL AS email, NUMBER AS number, PHONE AS phone, ROLE_IDS AS roleIds
+    </sql>
+
+</mapper>

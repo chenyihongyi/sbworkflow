@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.demo.dao.OaDepartmentMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.OaDepartment">
+		<id column="DEPARTMENT_ID" property="departmentId" />
+		<result column="NAME" property="name" />
+		<result column="NAME_EN" property="nameEn" />
+		<result column="BIANMA" property="bianma" />
+		<result column="PARENT_ID" property="parentId" />
+		<result column="BZ" property="bz" />
+		<result column="HEADMAN" property="headman" />
+		<result column="TEL" property="tel" />
+		<result column="FUNCTIONS" property="functions" />
+		<result column="ADDRESS" property="address" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        DEPARTMENT_ID AS departmentId, NAME AS name, NAME_EN AS nameEn, BIANMA AS bianma, PARENT_ID AS parentId, BZ AS bz, HEADMAN AS headman, TEL AS tel, FUNCTIONS AS functions, ADDRESS AS address
+    </sql>
+
+</mapper>

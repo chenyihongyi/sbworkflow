@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workflow.demo.dao.OaDatajurMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.OaDatajur">
+		<id column="DATAJUR_ID" property="datajurId" />
+		<result column="DEPARTMENT_IDS" property="departmentIds" />
+		<result column="STAFF_ID" property="staffId" />
+		<result column="DEPARTMENT_ID" property="departmentId" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        DATAJUR_ID AS datajurId, DEPARTMENT_IDS AS departmentIds, STAFF_ID AS staffId, DEPARTMENT_ID AS departmentId
+    </sql>
+
+</mapper>

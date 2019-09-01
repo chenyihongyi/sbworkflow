@@ -1,0 +1,20 @@
+package com.workflow.demo.util;
+
+import java.util.UUID;
+
+/**
+ * 生成UUID(32位不重复的字符串)
+ * @Author: Elvis
+ * @Date: 2019/9/1 22:07
+ */
+public class UuidUtil {
+
+    public static String get32UUID() {
+        String uuid = UUID.randomUUID().toString().trim().replaceAll("-", "");
+        return uuid;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(get32UUID());
+    }
+}
