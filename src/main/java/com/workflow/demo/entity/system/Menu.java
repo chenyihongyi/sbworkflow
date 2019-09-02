@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -21,24 +22,19 @@ public class Menu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("MENU_ID")
-	private Integer menuId;
-	@TableField("MENU_NAME")
-	private String menuName;
-	@TableField("MENU_URL")
-	private String menuUrl;
-	@TableField("PARENT_ID")
-	private String parentId;
-	@TableField("MENU_ORDER")
-	private String menuOrder;
-	@TableField("MENU_ICON")
-	private String menuIcon;
-	@TableField("MENU_TYPE")
-	private String menuType;
-	@TableField("MENU_STATE")
-	private Integer menuState;
-	@TableField("SHIRO_KEY")
-	private String shiroKey;
+	private String MENU_ID;		//菜单ID
+	private String MENU_NAME;	//菜单名称
+	private String MENU_URL;	//链接
+	private String PARENT_ID;	//上级菜单ID
+	private String MENU_ORDER;	//排序
+	private String MENU_ICON;	//图标
+	private String MENU_TYPE;	//类型
+	private String MENU_STATE;	//菜单状态
+	private String SHIRO_KEY;	//权限标识
+	private String target;
+	private Menu parentMenu;
+	private List<Menu> subMenu;
+	private boolean hasMenu = false;
 
 
 

@@ -3,7 +3,7 @@
 <mapper namespace="com.workflow.demo.dao.OaDatajurMapper">
 
 	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.OaDatajur">
+	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.Datajur">
 		<id column="DATAJUR_ID" property="datajurId" />
 		<result column="DEPARTMENT_IDS" property="departmentIds" />
 		<result column="STAFF_ID" property="staffId" />

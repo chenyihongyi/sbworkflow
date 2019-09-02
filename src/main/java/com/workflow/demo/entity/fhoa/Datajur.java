@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @since 2019-09-01
  */
 @TableName("oa_datajur")
-public class OaDatajur implements Serializable {
+public class Datajur implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

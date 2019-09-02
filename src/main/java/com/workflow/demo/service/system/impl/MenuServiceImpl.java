@@ -1,7 +1,7 @@
 package com.workflow.demo.service.system.impl;
 
 import com.workflow.demo.entity.system.Menu;
-import com.workflow.demo.dao.MenuMapper;
+import com.workflow.demo.mapper.dsno1.system.MenuMapper;
 import com.workflow.demo.service.system.MenuService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

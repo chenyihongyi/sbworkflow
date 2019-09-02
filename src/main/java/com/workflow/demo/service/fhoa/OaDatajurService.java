@@ -1,6 +1,6 @@
 package com.workflow.demo.service.fhoa;
 
-import com.workflow.demo.entity.fhoa.OaDatajur;
+import com.workflow.demo.entity.fhoa.Datajur;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author chenyihongyi
  * @since 2019-09-01
  */
-public interface OaDatajurService extends IService<OaDatajur> {
+public interface OaDatajurService extends IService<Datajur> {
 	
 }

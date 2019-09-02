@@ -1,11 +1,10 @@
 package com.workflow.demo.entity.system;
 
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -21,47 +20,19 @@ public class Dictionaries implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("DICTIONARIES_ID")
-	private String dictionariesId;
-    /**
-     * 名称
-     */
-	@TableField("NAME")
-	private String name;
-    /**
-     * 英文
-     */
-	@TableField("NAME_EN")
-	private String nameEn;
-    /**
-     * 编码
-     */
-	@TableField("BIANMA")
-	private String bianma;
-    /**
-     * 排序
-     */
-	@TableField("ORDER_BY")
-	private Integer orderBy;
-    /**
-     * 上级ID
-     */
-	@TableField("PARENT_ID")
-	private String parentId;
-    /**
-     * 备注
-     */
-	@TableField("BZ")
-	private String bz;
-    /**
-     * 排查表
-     */
-	@TableField("TBSNAME")
-	private String tbsname;
-	@TableField("TBFIELD")
-	private String tbfield;
-	@TableField("YNDEL")
-	private String yndel;
+	private String NAME;			//名称
+	private String NAME_EN;			//英文名称
+	private String BIANMA;			//编码
+	private String ORDER_BY;		//排序
+	private String PARENT_ID;		//上级ID
+	private String BZ;				//备注
+	private String TBSNAME;			//关联表
+	private String DICTIONARIES_ID;	//主键
+	private String target;
+	private Dictionaries dict;
+	private List<Dictionaries> subDict;
+	private boolean hasDict = false;
+	private String treeurl;
 
 
 

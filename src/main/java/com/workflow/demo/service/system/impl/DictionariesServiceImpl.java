@@ -1,7 +1,7 @@
 package com.workflow.demo.service.system.impl;
 
 import com.workflow.demo.entity.system.Dictionaries;
-import com.workflow.demo.dao.DictionariesMapper;
+import com.workflow.demo.mapper.dsno1.system.DictionariesMapper;
 import com.workflow.demo.service.system.DictionariesService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

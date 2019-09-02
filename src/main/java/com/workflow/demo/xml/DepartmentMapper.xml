@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.workflow.demo.dao.OaDepartmentMapper">
+<mapper namespace="com.workflow.demo.mapper.dsno1.fhoa.DepartmentMapper">
 
 	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.OaDepartment">
+	<resultMap id="BaseResultMap" type="com.workflow.demo.entity.fhoa.Department">
 		<id column="DEPARTMENT_ID" property="departmentId" />
 		<result column="NAME" property="name" />
 		<result column="NAME_EN" property="nameEn" />
