@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.fh.mapper.dsno1.act.RuprocdefMapper">
+<mapper namespace="com.workflow.demo.mapper.dsno1.act.RuprocdefMapper">
 	
 	<!--表名 -->
 	<sql id="tableName">
@@ -170,6 +170,5 @@
 			SUSPENSION_STATE_ = #{STATUS} 
 		where PROC_DEF_ID_ = #{ID_}
 	</update>
-	
-	<!-- fh313596790qq(青苔) -->
+
 </mapper>

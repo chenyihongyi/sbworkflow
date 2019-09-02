@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.fh.mapper.dsno1.fhdb.TimingBackUpMapper">
+<mapper namespace="com.workflow.demo.mapper.dsno1.fhdb.TimingBackUpMapper">
 	
 	<!--表名 -->
 	<sql id="tableName">
@@ -133,6 +133,5 @@
 		where 
 		TIMINGBACKUP_ID = #{TIMINGBACKUP_ID}
 	</update>
-	
-	<!-- fh313596790qq(青苔) -->
+
 </mapper>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.fh.mapper.dsno1.fhim.QgroupMapper">
+<mapper namespace="com.workflow.demo.mapper.dsno1.fhim.QgroupMapper">
+
 	
 	<!--表名 -->
 	<sql id="tableName">
@@ -141,6 +142,5 @@
 		from 
 		<include refid="tableName"></include> f
 	</select>
-	
-	<!-- fh313596790qq(青苔) -->
+
 </mapper>
