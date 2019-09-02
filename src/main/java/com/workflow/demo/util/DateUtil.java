@@ -248,6 +248,32 @@ public class DateUtil {
         }
     }
 
+    /**
+     * 上个月月份的一号
+     * @param date
+     * @return
+     */
+    public Date getLastDate(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MONTH, -1);
+        cal.set(Calendar.DATE, 1);
+        return cal.getTime();
+    }
+
+    /**
+     * 下个月月份的一号
+     * @param date
+     * @return
+     */
+    public Date getNextDate(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MONTH, +1);
+        cal.set(Calendar.DATE, 1);
+        return cal.getTime();
+    }
+
     public static void main(String[] args) {
         System.out.println(getDays());
         System.out.println(getAfterDayWeek("3"));

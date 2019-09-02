@@ -3,6 +3,7 @@ package com.workflow.demo.entity.system;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.workflow.demo.entity.Page;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -21,78 +22,18 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 用户ID
-     */
-    @TableId("USER_ID")
-	private String userId;
-    /**
-     * 用户名
-     */
-	@TableField("USERNAME")
-	private String username;
-    /**
-     * 密码
-     */
-	@TableField("PASSWORD")
-	private String password;
-    /**
-     * 姓名
-     */
-	@TableField("NAME")
-	private String name;
-    /**
-     * 角色ID
-     */
-	@TableField("ROLE_ID")
-	private String roleId;
-    /**
-     * 最近登录时间
-     */
-	@TableField("LAST_LOGIN")
-	private String lastLogin;
-    /**
-     * IP
-     */
-	@TableField("IP")
-	private String ip;
-    /**
-     * 状态
-     */
-	@TableField("STATUS")
-	private String status;
-    /**
-     * 备注
-     */
-	@TableField("BZ")
-	private String bz;
-    /**
-     * 皮肤
-     */
-	@TableField("SKIN")
-	private String skin;
-    /**
-     * 邮箱
-     */
-	@TableField("EMAIL")
-	private String email;
-    /**
-     * 编码
-     */
-	@TableField("NUMBER")
-	private String number;
-    /**
-     * 电话
-     */
-	@TableField("PHONE")
-	private String phone;
-    /**
-     * 副职角色ID组
-     */
-	@TableField("ROLE_IDS")
-	private String roleIds;
-
-
+	private String USER_ID;		//用户id
+	private String USERNAME;	//用户名
+	private String PASSWORD; 	//密码
+	private String NAME;		//姓名
+	private String ROLE_ID;		//角色id
+	private String ROLE_IDS;	//副职角色id
+	private String LAST_LOGIN;	//最后登录时间
+	private String IP;			//用户登录ip地址
+	private String STATUS;		//状态
+	private Role role;			//角色对象
+	private Page page;			//分页对象
+	private String SKIN;		//皮肤
 
 
 }
