@@ -1,20 +1,129 @@
 package com.workflow.demo.service.system.impl;
 
+import com.workflow.demo.entity.Page;
+import com.workflow.demo.entity.PageData;
 import com.workflow.demo.entity.system.Dictionaries;
 import com.workflow.demo.mapper.dsno1.system.DictionariesMapper;
 import com.workflow.demo.service.system.DictionariesService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * <p>
  *  服务实现类
  * </p>
- *
+ * 按钮权限服务接口实现类
  * @author chenyihongyi
  * @since 2019-09-01
  */
 @Service
-public class DictionariesServiceImpl extends ServiceImpl<DictionariesMapper, Dictionaries> implements DictionariesService {
-	
+@Transactional
+public class DictionariesServiceImpl implements DictionariesService {
+
+    @Autowired
+    private DictionariesMapper dictionariesMapper;
+
+    /**
+     * 获取所有数据并填充每条数据的子级列表(递归处理)
+     * @param MENU_ID
+     * @return
+     * @throws Exception
+     */
+    public List<Dictionaries> listAllDict(String parentId) throws Exception {
+        List<Dictionaries> dictList = this.listSubDictByParentId(parentId);
+        for(Dictionaries dict : dictList){
+            dict.setTreeurl("dictionaries_list.html?DICTIONARIES_ID="+dict.getDICTIONARIES_ID());
+            dict.setSubDict(this.listAllDict(dict.getDICTIONARIES_ID()));
+            dict.setTarget("treeFrame");
+        }
+        return dictList;
+    }
+
+    /**
+     * 通过ID获取其子级列表
+     * @param parentId
+     * @return
+     * @throws Exception
+     */
+    public List<Dictionaries> listSubDictByParentId(String parentId) throws Exception {
+        return dictionariesMapper.listSubDictByParentId(parentId);
+    }
+
+    /**
+     * 获取所有数据并填充每条数据的子级列表(递归处理)用于代码生成器引用数据字典
+     * @param MENU_ID
+     * @return
+     * @throws Exception
+     */
+    public List<Dictionaries> listAllDictToCreateCode(String parentId) throws Exception {
+        List<Dictionaries> dictList = this.listSubDictByParentId(parentId);
+        for(Dictionaries dict : dictList){
+            dict.setTreeurl("setDID('"+dict.getDICTIONARIES_ID()+"');");
+            dict.setSubDict(this.listAllDictToCreateCode(dict.getDICTIONARIES_ID()));
+            dict.setTarget("treeFrame");
+        }
+        return dictList;
+    }
+
+    /**列表
+     * @param page
+     * @throws Exception
+     */
+    public List<PageData> list(Page page)throws Exception{
+        return dictionariesMapper.datalistPage(page);
+    }
+
+    /**通过id获取数据
+     * @param pd
+     * @throws Exception
+     */
+    public PageData findById(PageData pd)throws Exception{
+        return dictionariesMapper.findById(pd);
+    }
+
+    /**通过编码获取数据
+     * @param pd
+     * @throws Exception
+     */
+    public PageData findByBianma(PageData pd)throws Exception{
+        return dictionariesMapper.findByBianma(pd);
+    }
+
+    /**新增
+     * @param pd
+     * @throws Exception
+     */
+    public void save(PageData pd)throws Exception{
+        dictionariesMapper.save(pd);
+    }
+
+    /**修改
+     * @param pd
+     * @throws Exception
+     */
+    public void edit(PageData pd)throws Exception{
+        dictionariesMapper.edit(pd);
+    }
+
+    /**排查表检查是否被占用
+     * @param pd
+     * @throws Exception
+     */
+    public PageData findFromTbs(PageData pd)throws Exception{
+        return dictionariesMapper.findFromTbs(pd);
+    }
+
+    /**删除
+     * @param pd
+     * @throws Exception
+     */
+    public void delete(PageData pd)throws Exception{
+        dictionariesMapper.delete(pd);
+    }
+
+
 }
