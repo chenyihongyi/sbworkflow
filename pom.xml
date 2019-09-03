@@ -198,6 +198,12 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
+
+		<!-- 电子邮件依赖 -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
