@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 2019-09-01
  */
 @Controller
-@RequestMapping("/oaDepartment")
-public class OaDepartmentController {
+@RequestMapping("/oaDatajur")
+public class DatajurController {
 	
 }
