@@ -1,0 +1,26 @@
+package com.workflow.demo.service.act;
+
+import com.workflow.demo.entity.Page;
+import com.workflow.demo.entity.PageData;
+
+import java.util.List;
+
+/**
+ * 历史流程任务接口
+ * @Author: Elvis
+ * @Date: 2019/9/5 22:47
+ */
+public interface HiprocdefService {
+
+    /**列表
+     * @param page
+     * @throws Exception
+     */
+    public List<PageData> list(Page page)throws Exception;
+
+    /**历史流程变量列表
+     * @param page
+     * @throws Exception
+     */
+    public List<PageData> hivarList(PageData pd)throws Exception;
+}
